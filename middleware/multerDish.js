@@ -1,0 +1,19 @@
+const multer = require("multer");
+
+function uploadImageDish(a) {
+  const storage = multer.diskStorage({
+    //el destino en el que voy a guardar la imagen
+    destination: `./public/images/${a}`,
+    //el nombre con el que voy a guardar la imagen
+    filename: function (req, file, cb) {
+      console.log(file);
+      cb(null, Date.now() + "-" + file.originalname);
+    },
+  });
+
+  const upload = multer({ storage: storage }).single("image_dish");
+
+  return upload;
+}
+
+module.exports = uploadImageDish;

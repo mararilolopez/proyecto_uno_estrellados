@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.img-titulo {
+  background-image: url(/images/other/foto-login.jpg);
+}
+body {
+  background-color: #1a1a1a;
+}
+
+.card1 {
+  height: 400px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.card1:hover {
+  transform: scale(1.1);
+}
+
+.card2 {
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  border: none;
+  background-color: #000;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+.card2:hover {
+  transform: scale(1.1);
+}
+
+.login {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.input-field span {
+  font-size: 12px;
+  color: #cecdcd;
+  margin-left: 10px;
+}
+
+.form-control {
+  font-size: 13px;
+  color: #767473;
+  font-weight: 500;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid #9b9b9b;
+  box-shadow: none;
+}
+
+.btn {
+  height: 35px;
+  width: 100%;
+  background-color: #2b2b2f !important;
+  font-weight: 500;
+  color: #fff !important;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #bf7534 !important;
+  border-color: #bf7534 !important;
+}
+.text1 .forget {
+  color: #767676;
+  font-weight: 500;
+}
+
+.text2 span {
+  font-weight: 500;
+  color: #7a7778;
+}
+
+.text2 .register {
+  color: #4f4942;
+  font-weight: bold;
+}
+
+.image {
+  width: 90%;
+}
+.image img {
+  width: 100%;
+}

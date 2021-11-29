@@ -1,0 +1,9 @@
+.imagen-error {
+  background-image: url(/images/other/error-login.png);
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
