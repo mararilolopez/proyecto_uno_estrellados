@@ -12,17 +12,18 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
 <body>
+    <header>
     <!--Menú de navegación que incluya el login de los chefs. El login lo vinculo a la ruta get que lleva a la vista del formulario.-->
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-mio">
+        <nav class="margenes navbar navbar-expand-lg navbar-light bg-mio">
             <a class="navbar-brand" href="/home">Estrellados</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="margen-down navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="/home">Home</a>
                     </li>
@@ -41,13 +42,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/home/login">Login</a>
                     </li>
-
                 </ul>
             </div>
         </nav>
-        <div class="titulo-seccion img-titulo">
-            <h1>Estrellados</h1>
+      <div class="titulo-seccion img-titulo">
+            <h1>Conoce a nuestros chefs</h1>
         </div>
+
         <div class="row chefs">
             <% resultadoChefs.forEach(chefs=> { %>
                 <div class="col-lg-3 col-md-6 col-sm-6 mt-80">

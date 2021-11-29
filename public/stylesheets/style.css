@@ -7,7 +7,7 @@ body {
 a {
   color: #00b7ff;
 }
-
+/*CABECERA DE TODA LA WEB*/
 img {
   width: 400px;
 }
@@ -49,10 +49,10 @@ img {
 .container-fluid {
   padding: 0 !important;
 }
-.paleta {
+/* .paleta {
   color: #bf7534;
   color: #f2a766;
   color: #f2c879;
   color: #f2f2f2;
   color: #464759;
-}
+} */
