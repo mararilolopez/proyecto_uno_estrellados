@@ -10,7 +10,7 @@ const sha1 = require("sha1");
 //localhost:3000/dishes/
 router.get("/", dishesController.allDishes);
 
-//Ruta get para crear un nuevo plato y ruta post para enviar esos datos
+//Ruta get para crear un nuevo plato y ruta post a continuación para enviar esos datos
 //localhost:3000/dishes/newDish
 router.get("/newDish", dishesController.createDish);
 

@@ -4,7 +4,7 @@ const sha1 = require("sha1");
 class dishesController {
   //Muestra la vista de todos los platos vinculándolo a su chef creador
   //La query vincula las dos tablas para que cada plato salga asociado a su chef.
-  //Resultado total muestra la vista asociada a esta ruta.
+  //Resultado total muestra la vista asociada a esta ruta que es allDishes.
   //localhost:3000/dishes/
   allDishes(req, res) {
     let sql = `SELECT * FROM chefs, dishes where chefs.chef_id = dishes.chef_id;`;
@@ -15,6 +15,7 @@ class dishesController {
   }
 
   //GET CREAR PLATO
+  //Renderiza la vista oneDish
   //localhost:3000/dishes/newDish
   createDish(req, res) {
     let sqlChefs = `SELECT * FROM chefs`;
@@ -24,6 +25,7 @@ class dishesController {
     });
   }
   //POST CREAR PLATO
+  //Envía todos los datos de registro del plato, incluida la imagen y redirecciona al usuario a la vista oneChef
   //localhost:3000/dishes/createDish
   postCreateDish(req, res) {
     let { name_dish, description_dish, chef_id } = req.body;
@@ -36,12 +38,11 @@ class dishesController {
   }
 
   //BORRAR PLATO
-  //(al haber foreign key debo relacionar el chef id con el dish id para el borrado y meter ambos como parámetros dinámicos) en la ruta
+  //Al haber foreign key debo relacionar el chef id con el dish id para el borrado y meter ambos como parámetros dinámicos en la ruta
   //localhost:3000/dishes/deleteDish/:chef_id/:dish_id
   //Se redirecciona al usuario a la vista del chef en cuestión
   deleteDish(req, res) {
     let { chef_id, dish_id } = req.params;
-
     let sql = `DELETE FROM dishes WHERE dish_id = ${dish_id}`;
     connection.query(sql, (error, resultado) => {
       if (error) throw error;
@@ -49,7 +50,7 @@ class dishesController {
     });
   }
 
-  //En esta ruta se renderiza la vista de editar plato. La query trae consigo el id del chef al estar vinculadas las dos tablas en la base de datos
+  //En esta ruta se renderiza la vista de editar plato. La query del post vincula el id del plato y id del chef
   //router.get("/mostrarFormulario/:dish_id"
   getEditDish(req, res) {
     let { dish_id } = req.params;
@@ -60,10 +61,8 @@ class dishesController {
     });
   }
 
-  //En esta ruta se guardan los cambios del plato y se envían (post). La ruta post es la que se vincula a la vista del formulario de editDish.
-  //Tanto el id del chef como del plato son parámetros dinámicos que debo recoger
-  //en el req.params para que ambos sigan vinculados. De esta forma, al cambiar
-  //los datos de un plato continúa estando vinculado a su chef y la ruta redirecciona al usuario a la vista de ese chef.
+  //En esta ruta se guardan los cambios del plato y se envían (post). La ruta post es la que se vincula a la vista anterior del formulario de editDish.
+  //Tanto el id del chef como del plato son parámetros dinámicos que debo recoger en el req.params para que ambos sigan vinculados. De esta forma, al cambiar los datos de un plato continúa estando vinculado a su chef y la ruta redirecciona al usuario a la vista de ese chef.
   //localhost:3000/dishes/guardar_cambios_dish/:dish_id
   postEditDish(req, res) {
     let { dish_id, chef_id } = req.params;

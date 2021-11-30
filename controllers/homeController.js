@@ -1,9 +1,9 @@
-//Requiero la constante que conecta con la base de datos y sha1
+//Requiero la constante que conecta con la base de datos y sha1 para encriptar la constraseña
 const connection = require("../config/db");
 const sha1 = require("sha1");
 
 class homeController {
-  //Bucle con todos los chefs. Es la página principal de la aplicacion. Nos aparecerá tambien cuando pinchemos en home.
+  //Bucle con todos los chefs. Es la página principal de la aplicacion. Nos aparecerá tambien cuando pinchemos en home. Renderiza la vista home.
   //localhost:3000/home (sin complemento)
   allChefs(req, res) {
     let sqlChefs = `SELECT * FROM chefs`;
@@ -19,7 +19,7 @@ class homeController {
     res.render("login/login");
   }
   //Ruta post para enviar los datos de login. La query comprueba que el email y el password coincidan. Se vuelve a encriptar la contraseña.
-  //Si el resultado del array es distinto a 0 renderizará la vista de error del login y sino redireccionará a la ruta del chef que ha introducido sus datos
+  //Si el resultado del array es distinto a la posición 0 renderizará la vista de error del login y sino redireccionará a la ruta del chef que ha introducido sus datos (siendo el id del chef un parámetro dinámico)
   //localhost:3000/home/send/login
   postLogin(req, res) {
     let { email, password } = req.body;
