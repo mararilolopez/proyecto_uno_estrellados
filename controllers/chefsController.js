@@ -42,6 +42,7 @@ class chefsController {
 
   //Muestra a un chef con sus platos. Hay una query para platos y otra para chef.
   //Ruta con dos consultas que se muestran al pulsar el botón Ver más
+  //http://localhost:3000/chefs/one/:id
   oneChefWithDishes(req, res) {
     let chef_id = req.params.chef_id;
     let sqlChef = `SELECT * FROM chefs WHERE chef_id = ${chef_id}`;
